@@ -3,7 +3,7 @@
 This project contains the code I wrote for the 2024 AoC.
 You can find the puzzle questions at <https://adventofcode.com/2024>.
 
-## Day 4 (24:04 + 20:37 = 40.41, rank 5038)
+## Day 4 (24:04 + 16:37 = 40.41, rank 5038)
 
 Brain not firing well this morning. I first read the puzzle as allowing any 
 path from the starting 'X', so any successive step could be up, down, left or 
@@ -22,7 +22,7 @@ limiting the number of repeated matches helped. I made the mistake of
 forgetting to check the `enabled` flag before doing the multiplication, and 
 had to wait a minute (!) before it would let me enter the answer again.
 
-## Day 2 (12:09 + 8:11 = 20:34, rank 2920)
+## Day 2 (12:09 + 8:25 = 20:34, rank 2920)
 
 I used `.zip(row.tail)` to do most of the heavy lifting in the puzzle. It 
 nicely handles the edge cases of empty or singleton list. Two the `.forall` 
