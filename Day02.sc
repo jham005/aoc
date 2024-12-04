@@ -15,16 +15,16 @@ def isSafe(row: Array[Int]): Boolean = {
 def isTolerablySafe(row: Array[Int]): Boolean =
   isSafe(row) || problemDampener(row).exists(isSafe)
 
-def countSafeLevels(input: String): Int = {
+def countSafeLevels(safeTest: Array[Int] => Boolean)(input: String): Int = {
   var count = 0
   for {
     line <- input.split('\n')
     row = line.split(' ').map(_.toInt)
-  } if (isTolerablySafe(row)) count += 1
+  } if (safeTest(row)) count += 1
   count
 }
 
-countSafeLevels("""7 6 4 2 1
+countSafeLevels(problemDampener(_).exists(isSafe))("""7 6 4 2 1
 1 2 7 8 9
 9 7 6 2 1
 1 3 2 4 5
