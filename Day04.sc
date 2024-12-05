@@ -1,3 +1,5 @@
+// https://adventofcode.com/2024/day/4
+
 def solve(input: String): (Int, Int) = {
   val grid = input.split('\n')
 

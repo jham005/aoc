@@ -3,6 +3,26 @@
 This project contains the code I wrote for the 2024 AoC.
 You can find the puzzle questions at <https://adventofcode.com/2024>.
 
+## Day 5: (40.57 + 59:33 = 1:40:30, rank 10436)
+
+Interesting puzzle today. I think solving the second part first might 
+actually have made it easier! Despite appearances, the puzzle doesn't really 
+involve numbers; e.g. there are no `>` or `<` comparisons required anywhere. 
+All the ordering comparisons are defined by the input pairs.
+
+I re-wrote the `reorder` function after I'd solved the puzzle to use a `Set` 
+rather than a sequence and leave the inputs as `String`s, and the code came 
+out much cleaner. I also made it generate the result in a "natural" (i.e. 
+reversed) order. Since we only care about the middle element, there is no 
+need to reverse it back.
+
+At one point I attempted a solution involving `.permutations`, kind of 
+brute-force on steroids. It worked fine for the sample input, but far too 
+slow for the actual puzzle data.
+
+I'm kinda pleased that, so far, I've used Scala out-of-the-box. No import in 
+sight. Interesting to see how long I can keep this up.
+
 ## Day 4 (24:04 + 16:37 = 40.41, rank 5038)
 
 Brain not firing well this morning. I first read the puzzle as allowing any 

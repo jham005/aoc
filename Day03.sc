@@ -1,3 +1,5 @@
+// https://adventofcode.com/2024/day/3
+
 def solve(input: String): Int = {
   val mulRegex = """(mul\((\d{1,3}),(\d{1,3})\))|(do\(\))|(don't\(\))""".r
   var enable = true
