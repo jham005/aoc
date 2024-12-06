@@ -3,6 +3,32 @@
 This project contains the code I wrote for the 2024 AoC.
 You can find the puzzle questions at <https://adventofcode.com/2024>.
 
+## Day 6: (48:06 + 1:21:49 = 2:09:55, rank 7725)
+
+Plenty of fiddly detail to contend with today. I can see how doing these 
+events regularly would help. The puzzles have a certain style that takes a 
+while to get used to.
+
+I started out writing `walk` as a `while`-loop, but it soon became apparent 
+that recursion would make things easier. It eventually did (but I had to 
+break my private challenge of avoiding `import`s, although `@tailrec` is 
+arguably a core feature). In fact, the more functional I made the code the 
+easier it was to get it right. Passing the guard's position and direction as 
+arguments (rather than having them as `var`s) meant it was really clear when 
+the guard moved position vs. just changing direction. I still left the grid 
+mutable, so I could record the path explicitly. This proved to be a major 
+obstacle for solving the second part. The second part required trying out 
+different positions for the obstacle, so I decided cloning the grid would be 
+the easiest way to do that. But of course Java (and hence Scala) `.clone()` 
+is shallow - leaving the underlying arrays intact. Once I twigged (hurrah 
+for `println`) things started to come together.
+
+I also messed up the logic for detecting if the guard had looped. The 
+easiest method would have been to just keep a count of how many steps he had 
+taken, but instead I tried to look at the board for footsteps. Sadly, this 
+ignores the direction! When I adopted the "proper" approach of maintaining a 
+set of locations and directions, it all came together.
+
 ## Day 5: (40.57 + 59:33 = 1:40:30, rank 10436)
 
 Interesting puzzle today. I think solving the second part first might 
