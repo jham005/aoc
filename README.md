@@ -3,6 +3,25 @@
 This project contains the code I wrote for the 2024 AoC.
 You can find the puzzle questions at <https://adventofcode.com/2024>.
 
+## Day 7: (28:09 + 1:44 = 29:53, rank 3703)
+
+Nice to have a proper non-tail recursive problem. I lost a bit of time on 
+parsing the input. If I was smarter I'd have just throw `.split` at it, but 
+fool me thought I'd use a regex. It looks like a regex along the lines of 
+`"""(\d+): (?: (\d+))*"""` should do the trick, but Java's regex 
+implementation doesn't support matching repeated patterns. Maybe I was 
+thinking of .NET regex, because I was sure this sort of thing was possible.
+
+The logic fell out easily enough once I reverted to using linked lists 
+instead of `Array`s. Scala doesn't treat `Array` as a first-class `Seq`, so 
+it fails to pattern match `a :: b :: tail`. I'm usually averse to anything 
+linked list, given the ridiculous per-element overhead they incur, but they 
+do fit this puzzle quite well. I didn't bother optimising `possibles` to 
+avoid the concatenation, since the size of the results was fairly small.
+
+Nice touch including some `Long`s in the puzzle input. Let's just hope they 
+pop in some `BigInt`s sometime soon!
+
 ## Day 6: (48:06 + 1:21:49 = 2:09:55, rank 7725)
 
 Plenty of fiddly detail to contend with today. I can see how doing these 
