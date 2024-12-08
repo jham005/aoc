@@ -3,6 +3,16 @@
 This project contains the code I wrote for the 2024 AoC.
 You can find the puzzle questions at <https://adventofcode.com/2024>.
 
+## Day 8: (57:04 + 5:17 = 1:02:21, rank 5904)
+
+`tails` to the rescue on this one. Quite a nice pattern to use to compare 
+each pair of elements, by taking the `head` and matching it with the `tail` 
+for of each `tails`.
+
+Would help me to tighten up my geometry a bit. Coming up with the formula to 
+reflect a point was more a case of permutation coding than applying actual 
+logic. At least the harmonics in part 2 fell out easily.
+
 ## Day 7: (28:09 + 1:44 = 29:53, rank 3703)
 
 Nice to have a proper non-tail recursive problem. I lost a bit of time on 
