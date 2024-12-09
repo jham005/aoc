@@ -3,6 +3,25 @@
 This project contains the code I wrote for the 2024 AoC.
 You can find the puzzle questions at <https://adventofcode.com/2024>.
 
+## Day 9: (36:53 + 1:14:43) = 1:51:36, rank 5453)
+
+Getting the right data structures was the key here. For the first part I did 
+it all using a simple free map, containing the `fileId` or `-1` for each 
+block. This worked, but was pretty slow.
+
+For the second part I decided I needed to separately track the used and free 
+space lengths, since looking for gaps of the right length was going to be a 
+pain otherwise. It was a bit fiddly converting between the lengths and the 
+indexes into the free map (which I needed to keep in order to work out the 
+checksum; didn't think of that at first!), but our friend `take` came to the 
+rescue eventually.
+
+Nasty subtlety at the close, where the first version I managed to get 
+working on the sample input failed on the puzzle input. Turned out I was 
+allowing compaction to move blocks to the right. Lost a bunch of time 
+debugging that one, as I had to first construct a new example to identity the 
+issue.
+
 ## Day 8: (57:04 + 5:17 = 1:02:21, rank 5904)
 
 `tails` to the rescue on this one. Quite a nice pattern to use to compare 
