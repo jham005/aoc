@@ -3,6 +3,14 @@
 This project contains the code I wrote for the 2024 AoC.
 You can find the puzzle questions at <https://adventofcode.com/2024>.
 
+## Day 10: (48:26 + 2:02 = 50:28, rank 6215)
+
+Gotta love recursion, just need to focus on what's being counted. Basically 
+solved part 2 before part 1. Also need to get directions right - "up, down, 
+left, right" doesn't mean choose any pair of `dx`, `dy` from `(-1, 0, 1)` :-
+(. Ended up with a couple of `var`s to do the counting, which made 
+`traverse` feel a bit unclean. But I can live with that.
+
 ## Day 9: (36:53 + 1:14:43) = 1:51:36, rank 5453)
 
 Getting the right data structures was the key here. For the first part I did 
