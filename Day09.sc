@@ -1,4 +1,4 @@
-// https://adventofcode.com/2024/day/
+// https://adventofcode.com/2024/day/9
 
 def toFreeMap(lengths: Array[Int]): Array[Int] = {
   val freeMap = Array.fill(lengths.sum)(-1)

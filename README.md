@@ -3,6 +3,20 @@
 This project contains the code I wrote for the 2024 AoC.
 You can find the puzzle questions at <https://adventofcode.com/2024>.
 
+## Day 11: (21:24 + 29:24 = 50:48, rank 4133)
+
+Lovely twist in part 2. When the penny dropped it was delightfully easy to 
+add a cache to limit the repeated recursive calls.
+
+Couldn't decide whether to make `stone` a `BigInt` or `String` in part 2. 
+Since the main operation was testing the length, I went with `String`. Did 
+mean a bunch of conversions into `BigInt` and back. Tried to do this just 
+with `String`, using `stripPrefix("0")`, but it got fiddly handling zero so 
+I decided to leave `BigInt` to do the work.
+
+My "no imports" challenge is lost :-(. I don't see any easy way of avoiding 
+`mutable.Map` (not without losing the elegance of `getOrElseUpdate`).
+
 ## Day 10: (48:26 + 2:02 = 50:28, rank 6215)
 
 Gotta love recursion, just need to focus on what's being counted. Basically 
