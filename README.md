@@ -3,6 +3,28 @@
 This project contains the code I wrote for the 2024 AoC.
 You can find the puzzle questions at <https://adventofcode.com/2024>.
 
+## Day 12: (1:21:15 + ages = ages and ages, rank awful)
+
+Work interrupted play today, which is fortunate because I was looking for 
+someone to blame for my poor showing. There is probably some graph theory I 
+should know that lets you compute the number of edges trivially, but since I 
+don't know it (and refuse to google anything) I had to bludgeon my way 
+through this puzzle. The code looks complicated, and despite giving the 
+correct answers it's hard for me to have high confidence in it.
+
+Seemed reasonable to compute the perimeter by first treating each plot as 
+an isolated region, and then subtracting the number of common walls. For the 
+straight sections of fence, I (eventually) thought of counting the number of 
+bends. A bend either being a plot that no neighbours in the region, or a 
+point outside the region that touches three plots inside the region (the 
+points outside have to abut the region, making them easy to find). The puzzle
+kindly (I thought) pointed out the exception to this rule, when a diagonal 
+forms in an internal region. Translating that into code took a while, and it 
+was all a bit fiddly.
+
+Probably should have adopted a class for storing points, so I could attach 
+methods to give the neighbours etc.
+
 ## Day 11: (21:24 + 29:24 = 50:48, rank 4133)
 
 Lovely twist in part 2. When the penny dropped it was delightfully easy to 
