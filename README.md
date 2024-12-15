@@ -3,7 +3,30 @@
 This project contains the code I wrote for the 2024 AoC.
 You can find the puzzle questions at <https://adventofcode.com/2024>.
 
-## [Day 13](Day13.cpp): Failure :-(
+## [Day 15](Day15.sc): (55:30 + 4:40:24, rank 7009)
+
+Nice to return to a fairly straightforward coding puzzle today. I didn't
+find any need for any complex data structures, just a 2d array for the
+warehouse. Each move updates the warehouse in-place, using recursion to
+handle chains of connected boxes. The clue to a box being successfully moved
+is having its previous position replaced with a `.`. This requires calling
+`at(p1)` twice: even though `p1` doesn't change, the warehouse changes
+underneath. Got bitten by that once or twice.
+
+Part 2 had some nice edge cases that I need to take a break and think about.
+Eventually decided to check if a move is possible before performing the move,
+but had to fiddle around with several variation of my `canMove` function 
+before settling on one that worked. It's pretty inefficient as it 
+re-evaluates locations repeatedly, but I couldn't be bothered adding 
+memoization given it was performant enough. Second decision was to treat 
+horizontal and vertical movements separately. The two cases could probably 
+be merged, but again it didn't seem worth the effort.
+
+## [Day 14](Day14a.sc): Another failure :-(
+
+More congruence theory needed?
+
+## [Day 13](Day13a.sc): Failure :-(
 
 There's surely an elegant, efficient solution for this somewhere. I tinkered
 with binary search, but couldn't see how that could ever work with two
